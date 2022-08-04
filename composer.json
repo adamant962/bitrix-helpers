@@ -1,0 +1,16 @@
+{
+    "name": "t_dugarov/bitrix-helper",
+    "description": "Bitrix helpers",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tumen Dugarov",
+            "email": "t.dugarov@tanais.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"Tanais\\": "src/"}
+    }
+}
