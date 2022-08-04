@@ -12,5 +12,6 @@
     "require": {},
     "autoload": {
         "psr-4": {"Tanais\\": "src/"}
-    }
+    },
+    "minimum-stability": "dev"
 }
