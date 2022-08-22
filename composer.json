@@ -13,7 +13,7 @@
         "php": ">=7.4"
     },
     "autoload": {
-        "psr-4": {"Tumen\\": "src/"}
+        "psr-4": {"Tanais\\": "src/"}
     },
     "minimum-stability": "dev"
 }
