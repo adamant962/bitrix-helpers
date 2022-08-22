@@ -7,7 +7,7 @@ namespace Tanais;
 interface IblockElementInterface
 {
     /** Идентификатор */
-    public function getId(): int;
+    public function getId(): string;
 
     /** Наименование */
     public function getName(): string;
@@ -19,7 +19,10 @@ interface IblockElementInterface
     public function getXmlId(): string;
 
     /** Превью текст */
-    public function getPreviewText(): ?array;
+    public function getPreviewText(): ?string;
+
+    /** Детальный текст */
+    public function getDetailText(): ?string;
 
     /** Превью изображение */
     public function getPreviewPicture(): ?array;

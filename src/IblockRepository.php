@@ -8,7 +8,8 @@ class IblockRepository implements IblockRepositoryInterface
 {
     private int $iblockId;
 
-    public function __construct($iblockId) {
+    public function __construct($iblockId)
+    {
         $this->iblockId = $iblockId;
     }
 
@@ -20,6 +21,7 @@ class IblockRepository implements IblockRepositoryInterface
             "CODE",
             "XML_ID",
             'PREVIEW_TEXT',
+            'DETAIL_TEXT',
             'PREVIEW_PICTURE'
         ];
 
@@ -32,6 +34,31 @@ class IblockRepository implements IblockRepositoryInterface
 
         if ($result_data) {
             return new IblockElement($result_data);
+        }
+
+        throw new \Exception('Iblock element not found');
+    }
+
+    public function getSectionById(int $section_id): IblockSectionInterface
+    {
+        $arSelect = [
+            "ID",
+            "NAME",
+            "CODE",
+            "XML_ID",
+            'DEPTH_LEVEL',
+            'IBLOCK_SECTION_ID'
+        ];
+
+        $arFilter = [
+            "IBLOCK_ID" => $this->iblockId,
+            "ID" => $section_id,
+        ];
+
+        $result_data = \CIBlockSection::GetList([], $arFilter, false, $arSelect, false)->Fetch();
+
+        if ($result_data) {
+            return new IblockSection($result_data);
         }
 
         throw new \Exception('Iblock element not found');
