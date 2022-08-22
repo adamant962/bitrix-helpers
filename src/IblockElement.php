@@ -69,9 +69,7 @@ class IblockElement implements IblockElementInterface
         }
 
         if (!empty($this->element_data['PREVIEW_PICTURE'])) {
-            $this->preview_picture = \CFile::GetFileArray(
-                $this->element_data['PREVIEW_PICTURE']
-            );
+            $this->preview_picture = \CFile::GetFileArray($this->element_data['PREVIEW_PICTURE']);
         }
 
         return $this->preview_picture;
