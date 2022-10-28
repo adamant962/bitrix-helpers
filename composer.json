@@ -1,19 +1,19 @@
 {
-    "name": "t_dugarov/bitrix-helper",
+    "name": "adamant/bitrix-helper",
     "description": "Bitrix helpers",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Tumen Dugarov",
-            "email": "t.dugarov@tanais.ru"
+            "email": "tumen_96@mail.ru"
         }
     ],
     "require": {
         "php": ">=7.4"
     },
     "autoload": {
-        "psr-4": {"Tanais\\": "src/"}
+        "psr-4": {"BitrixHelp\\": "src/"}
     },
     "minimum-stability": "dev"
 }

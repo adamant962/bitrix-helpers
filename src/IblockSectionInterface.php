@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tanais;
+namespace BitrixHelp;
 
 interface IblockSectionInterface
 {
