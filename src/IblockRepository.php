@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tanais;
+namespace BitrixHelp;
 
 class IblockRepository implements IblockRepositoryInterface
 {
@@ -13,17 +13,9 @@ class IblockRepository implements IblockRepositoryInterface
         $this->iblockId = $iblockId;
     }
 
-    public function getElementById(int $element_id): IblockElementInterface
+    public function getElementById(int $element_id, array $ar_select): IblockElementInterface
     {
-        $arSelect = [
-            "ID",
-            "NAME",
-            "CODE",
-            "XML_ID",
-            'PREVIEW_TEXT',
-            'DETAIL_TEXT',
-            'PREVIEW_PICTURE'
-        ];
+        $arSelect = $ar_select;
 
         $arFilter = [
             "IBLOCK_ID" => $this->iblockId,
@@ -39,16 +31,9 @@ class IblockRepository implements IblockRepositoryInterface
         throw new \Exception('Iblock element not found');
     }
 
-    public function getSectionById(int $section_id): IblockSectionInterface
+    public function getSectionById(int $section_id, array $ar_select): IblockSectionInterface
     {
-        $arSelect = [
-            "ID",
-            "NAME",
-            "CODE",
-            "XML_ID",
-            'DEPTH_LEVEL',
-            'IBLOCK_SECTION_ID'
-        ];
+        $arSelect = $ar_select;
 
         $arFilter = [
             "IBLOCK_ID" => $this->iblockId,
